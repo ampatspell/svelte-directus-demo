@@ -6,6 +6,7 @@ import type { PageServerLoad } from './$types';
 export const load: PageServerLoad = async ({ fetch }) => {
   const directus = getDirectus(fetch);
   return {
-    hello: await directus.request(readSingleton(CollectionNames.hello, {}))
+    hello: await directus.request(readSingleton(CollectionNames.hello)),
+    install: await directus.request(readSingleton(CollectionNames.install)),
   };
 };
