@@ -1,7 +1,10 @@
 <script lang="ts">
+  let { data } = $props();
+
+  let hello = $derived(data.hello);
 </script>
 
-<div class="hello">Hello, I'm SvelteKit app</div>
+<div class="hello">{hello.message}</div>
 
 <style lang="scss">
   .hello {
