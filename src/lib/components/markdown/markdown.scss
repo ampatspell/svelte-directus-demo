@@ -1,0 +1,29 @@
+.markdown {
+  line-height: 1.2;
+  pre {
+    border: 1px solid #eee;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    border-radius: 3px;
+    white-space: pre-wrap;
+  }
+  code {
+    font-size: var(--dark-font-size);
+    font-family: var(--dark-font-family);
+  }
+  ul {
+    margin: 10px 0 0 0;
+    padding-inline-start: 25px;
+  }
+  h1 {
+    margin: 30px 0 0 0;
+    font-size: 18px;
+  }
+  h2 {
+    margin: 30px 0 0 0;
+    font-size: 16px;
+  }
+  p {
+    margin: 10px 0 0 0;
+  }
+}

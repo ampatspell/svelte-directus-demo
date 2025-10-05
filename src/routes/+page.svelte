@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
+
   let { data } = $props();
 
   let hello = $derived(data.hello);
@@ -6,7 +8,7 @@
 
 <div class="hello">
   <div class="message">{hello.message}</div>
-  <div class="install">{data.install.content}</div>
+  <div class="install"><a href={resolve('/install')}>Install instructions</a></div>
 </div>
 
 <style lang="scss">
@@ -14,9 +16,11 @@
     padding: 50px;
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 15px;
     > .install {
-      white-space: pre-wrap;
+      :global(a) {
+        text-decoration-color: #ccc;
+      }
     }
   }
 </style>
