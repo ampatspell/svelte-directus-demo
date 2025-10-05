@@ -10,6 +10,12 @@
   code {
     font-size: var(--dark-font-size);
     font-family: var(--dark-font-family);
+    color: var(--color-prettylights-syntax-constant);
+  }
+  pre {
+    code {
+      color: var(--dark-color);
+    }
   }
   ul {
     margin: 10px 0 0 0;
