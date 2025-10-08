@@ -12,7 +12,8 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write .",
     "lint": "prettier --check . && eslint .",
-    "generate": "tsx ./src/lib/directus/generate.ts"
+    "tools": "tsx ./src/lib/directus/tools.ts",
+    "generate": "npm run tools -- generate"
   },
   "devDependencies": {
     "@eslint/compat": "^1.4.0",
@@ -36,9 +37,10 @@
     "vite-plugin-devtools-json": "^1.0.0"
   },
   "engines": {
-    "node": "22"
+    "node": "24"
   },
   "dependencies": {
+    "@clack/prompts": "^0.11.0",
     "@directus/sdk": "^20.1.0",
     "@directus/visual-editing": "^1.1.0",
     "directus-sdk-typegen": "^0.2.1",
