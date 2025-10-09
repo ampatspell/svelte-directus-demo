@@ -6,6 +6,10 @@ COPY package*.json .
 RUN npm ci
 COPY . .
 
+ARG PRIVATE_DIRECTUS_ADMIN_TOKEN
+ARG PUBLIC_DIRECTUS_URL
+ARG PUBLIC_DIRECTUS_TOKEN
+
 RUN npm run generate
 RUN npm run build
 RUN npm prune --production
@@ -21,6 +25,10 @@ COPY --from=builder /app/node_modules node_modules/
 COPY package.json .
 
 EXPOSE 3000
+
+ARG PRIVATE_DIRECTUS_ADMIN_TOKEN
+ARG PUBLIC_DIRECTUS_URL
+ARG PUBLIC_DIRECTUS_TOKEN
 
 ENV NODE_ENV=production
 CMD [ "node", "build" ]
