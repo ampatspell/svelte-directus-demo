@@ -8,7 +8,7 @@ import {
   schemaDiff,
   schemaSnapshot,
   type SchemaDiffOutput,
-  type SchemaSnapshotOutput,
+  type SchemaSnapshotOutput
 } from '@directus/sdk';
 import { readFile, writeFile } from 'node:fs/promises';
 import { getDirectusInternal } from './base';
@@ -40,8 +40,8 @@ if (!tool) {
       { label: 'Generate types', value: 'generate' },
       { label: 'Snapshot schema', value: 'snapshot' },
       { label: 'Diff schema', value: 'diff' },
-      { label: 'Apply schema', value: 'apply' },
-    ],
+      { label: 'Apply schema', value: 'apply' }
+    ]
   });
   if (typeof selected === 'string') {
     tool = selected;
@@ -52,7 +52,7 @@ if (tool === 'generate') {
   await generateDirectusTypes({
     outputPath: SCHEMA_TS,
     directusUrl: process.env.PUBLIC_DIRECTUS_URL,
-    directusToken: process.env.PRIVATE_DIRECTUS_ADMIN_TOKEN,
+    directusToken: process.env.PRIVATE_DIRECTUS_ADMIN_TOKEN
   });
 } else if (tool === 'snapshot') {
   const snapshot = await directus.request(schemaSnapshot());

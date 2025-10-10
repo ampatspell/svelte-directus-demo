@@ -20,8 +20,8 @@ const queue = new Queue({ intervalCap: 10, interval: 500, carryoverIntervalCount
 export const getDirectusInternal = (fetch: Fetch, url: string, token: string) => {
   return createDirectus<Schema>(url, {
     globals: {
-      fetch: (...args) => queue.add(() => fetchRetry(fetch, 0, ...args)),
-    },
+      fetch: (...args) => queue.add(() => fetchRetry(fetch, 0, ...args))
+    }
   })
     .with(staticToken(token))
     .with(rest());

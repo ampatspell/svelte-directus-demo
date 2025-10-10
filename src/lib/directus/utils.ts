@@ -12,7 +12,7 @@ interface SetAttrOptions {
 export const setAttr = (opts: SetAttrOptions) => {
   if (page.data.visualEditingEnabled) {
     return baseSetAttr({
-      ...opts,
+      ...opts
     });
   }
   return undefined;
