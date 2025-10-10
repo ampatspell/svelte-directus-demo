@@ -17,9 +17,6 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    > .message {
-      font-weight: 600;
-    }
     > .install {
       :global(a) {
         text-decoration-color: #ccc;
